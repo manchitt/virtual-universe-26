@@ -1,50 +1,61 @@
-# GitHub Virtual Universe '26 Workshop — Progress Report
+# GitHub Virtual Universe '26 Workshop — Verified Status Report
 
-## Summary of Completed Hands-on Work
+## 1. Verified Completed Exercises
 
 ### Section 1: The Modern GitHub Experience
-1. **Tutorial 1 · Attach Images to an Issue from CLI**
-   - **Issue created:** [#4 — Menu prices show $NaN](https://github.com/manchitt/virtual-universe-26/issues/4)
-   - **Attachment:** `menu-prices.png#Menu board showing $NaN` uploaded directly from the CLI via `gh issue create --attach`.
-   - **Learning concept:** Demonstrates attaching screenshots directly to issues from headless CI/CD test runners (e.g. Playwright) or local terminals.
+* **Tutorial 1 · Attach Images to an Issue from CLI**
+  - **Status:** Verified Complete.
+  - **Artifact:** [Issue #4 — Menu prices show $NaN](https://github.com/manchitt/virtual-universe-26/issues/4) with Playwright screenshot uploaded via `gh issue create --attach`.
+* **Tutorial 2 · Create a Stacked Pull Request (Mona's Café Menu)**
+  - **Status:** Verified Complete and Merged.
+  - **Artifacts:**
+    - [PR #1 — Add espresso to the menu](https://github.com/manchitt/virtual-universe-26/pull/1) (`menu/espresso` into `main`) — **MERGED**
+    - [PR #2 — Add latte to the menu](https://github.com/manchitt/virtual-universe-26/pull/2) (`menu/latte` into `menu/espresso`) — **MERGED**
+    - [Stack #3](https://github.com/manchitt/virtual-universe-26/stack/3)
+    - Executed `gh stack merge --yes --merge`; fast-forwarded `main` locally with `01-github-latest-features/create-a-stacked-pr/menu.md` containing espresso ($3.00) and latte ($4.50).
 
-2. **Tutorial 2 · Create a Stacked Pull Request**
-   - **Stack created:** [Stack #3](https://github.com/manchitt/virtual-universe-26/stack/3)
-   - **Layer 1 (Bottom):** [PR #1 — Add espresso to the menu](https://github.com/manchitt/virtual-universe-26/pull/1) (`menu/espresso` merging into `main`).
-   - **Layer 2 (Top):** [PR #2 — Add latte to the menu](https://github.com/manchitt/virtual-universe-26/pull/2) (`menu/latte` merging into `menu/espresso`).
-   - **Learning concept:** Breaking large features into atomic, dependent pull requests where each layer is individually reviewable and GitHub Stacks allows merging them together downstack.
+### Section 2: Agentic Software Development with GitHub Copilot (Project Code & Skill Files)
+* **Part 1 · Skill Requirement & Universe Notes Implementation**
+  - **Status:** Verified Complete.
+  - **Artifacts:**
+    - `.github/skills/issue-to-pr/SKILL.md` updated and pushed to `main` (requires "How to test" section).
+    - [Issue #5 — Add a list command to universe-notes](https://github.com/manchitt/virtual-universe-26/issues/5).
+    - Created `universe-notes/list.js` and `"list": "node list.js"` in `universe-notes/package.json`. Tested with `npm run list`.
+    - [Draft PR #6 — Fix #5: Add a list command to universe-notes](https://github.com/manchitt/virtual-universe-26/pull/6) with test steps.
+* **Part 3 · Search Command Implementation**
+  - **Status:** Verified Complete.
+  - **Artifacts:**
+    - [Issue #7 — Add a search command to universe-notes](https://github.com/manchitt/virtual-universe-26/issues/7).
+    - Created `universe-notes/search.js` and `"search": "node search.js"` in `universe-notes/package.json`. Tested with `npm run search -- stacked`.
+    - [Draft PR #8 — Fix #7: Add a search command to universe-notes](https://github.com/manchitt/virtual-universe-26/pull/8).
 
-3. **Open Source Maintainer Controls**
-   - Explored maintainer configuration features: participation boundaries, archive pull requests queue, and rate limiting pull requests from non-collaborators.
-
----
-
-### Section 2: Agentic Software Development with GitHub Copilot
-1. **Part 1 · Custom Skill Creation & Enhancement**
-   - Modified `.github/skills/issue-to-pr/SKILL.md` to require clear "How to test" instructions in generated draft PR bodies.
-   - Pushed skill enhancements to `main`.
-   - Filed [Issue #5 — Add a list command to universe-notes](https://github.com/manchitt/virtual-universe-26/issues/5).
-   - Implemented `universe-notes/list.js` and `npm run list` to group highlights by topic.
-   - Opened draft [PR #6 — Fix #5: Add a list command to universe-notes](https://github.com/manchitt/virtual-universe-26/pull/6).
-
-2. **Part 2 · Tools & Connectors**
-   - Updated `.github/skills/issue-to-pr/SKILL.md` with instructions for the Context7 Expert agent and MCP connector to fetch live API/runtime documentation rather than stale model weights.
-
-3. **Part 3 · Security Code Review**
-   - Added automated security review verification step to `.github/skills/issue-to-pr/SKILL.md` to catch high/critical vulnerabilities prior to PR opening.
-   - Pushed update to `main`.
-   - Filed [Issue #7 — Add a search command to universe-notes](https://github.com/manchitt/virtual-universe-26/issues/7).
-   - Implemented `universe-notes/search.js` (`npm run search -- <word>`) with safe substring matching and fixed directory resolution.
-   - Opened draft [PR #8 — Fix #7: Add a search command to universe-notes](https://github.com/manchitt/virtual-universe-26/pull/8) including test steps and security assessment.
-
-4. **Part 4 · Automations**
-   - Documented trigger mechanics for turning skills into scheduled or event-driven agent tasks via Copilot Automations.
+### Section 3: GitHub Universe Highlights & Issue Artifacts
+* **Attach a Cheat Sheet Artifact**
+  - **Status:** Verified Complete.
+  - **Artifacts:**
+    - [Issue #9 — My GitHub Universe '26 cheat sheet](https://github.com/manchitt/virtual-universe-26/issues/9) with right-aligned astronaut image.
+    - [Artifact #1: GitHub Universe 2026 cheat sheet](https://github.com/manchitt/virtual-universe-26/issues/9/artifacts/1)
+    - [Artifact #2: How Copilot built this](https://github.com/manchitt/virtual-universe-26/issues/9/artifacts/2)
+    - [Artifact #3: Badger easter egg card](https://github.com/manchitt/virtual-universe-26/issues/9/artifacts/3) (rendered via headless Chrome).
 
 ---
 
-### Section 3: GitHub Universe Highlights & Final Exercise
-1. **Issue Artifacts**
-   - Created [Issue #9 — My GitHub Universe '26 cheat sheet](https://github.com/manchitt/virtual-universe-26/issues/9) with uploaded & aligned astronaut badge.
-   - Attached **Issue Artifact 1**: [GitHub Universe 2026 cheat sheet](https://github.com/manchitt/virtual-universe-26/issues/9/artifacts/1)
-   - Attached **Issue Artifact 2**: [How Copilot built this](https://github.com/manchitt/virtual-universe-26/issues/9/artifacts/2)
-   - Attached **Issue Artifact 3**: [Badger easter egg card](https://github.com/manchitt/virtual-universe-26/issues/9/artifacts/3) rendered and uploaded from `easter-egg.html`.
+## 2. Prepared in Code vs. Pending in GitHub Copilot App
+
+The following workshop steps require the interactive **GitHub Copilot App** GUI (or session extensions) and cannot be executed via the local terminal/git toolchain:
+
+| Exercise | Prepared / Local State | Pending Copilot App Action |
+|---|---|---|
+| **Section 2 · Part 1** | Skill file updated on `main`, issue #5 created, PR #6 created | Run `/issue-to-pr 5` inside the Copilot App chat |
+| **Section 2 · Part 2** | Skill file updated to specify Context7 MCP connector usage | Add Context7 MCP server under Copilot App `Customize -> Add server -> HTTP` |
+| **Section 2 · Part 3** | Skill file updated with security review rule, issue #7 and PR #8 created | Run `/security-review` in Copilot App chat on PR #6 |
+| **Section 2 · Part 4** | Prompt text and configuration instructions documented | Open `Automations -> New Automation` in Copilot App, configure "Issue to PR", and run |
+
+---
+
+## 3. Codespace Access Status
+
+* **Codespace detected:** `solitary-troll-4qg7vqwqpw6g2j7p6` at `https://solitary-troll-4qg7vqwqpw6g2j7p6.github.dev/`.
+* **CLI Access Blocker:** `gh codespace` returned HTTP 403 (missing `codespace` scope).
+  * **To unlock:** Run `gh auth refresh -h github.com -s codespace` in your terminal and approve the browser prompt.
+* **Safari Automation Blocker:** "Allow JavaScript from Apple Events" is disabled in Safari Settings -> Developer.
